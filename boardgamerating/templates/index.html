@@ -55,7 +55,6 @@
           <li><a class="nav-link scrollto" href="#predictions">Model Predictions</a></li>
           <li><a class="nav-link scrollto " href="#comparison">Model Comparison</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -499,8 +498,9 @@
 
         <div class="section-title">
           <h2>Team</h2>
-          <h3>Our Hardworking <span>Team</span></h3>
-        </div>
+          <h3>Contact <span>Us</span></h3>
+          <p>This is a Machine Learning project while we studied in Case Western Reserve University Data Analysis BootCamp.</p>
+    </div>
 
         <div class="row justify-content-evenly">
 
@@ -509,11 +509,11 @@
               <div class="member-img">
                 <img src="https://ca.slack-edge.com/T01K60SVDUG-U01JXQTE3LJ-6979d383d51f-512" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/justinemarie/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Justine</h4>
+                <h4>Justine Hughes</h4>
               </div>
             </div>
           </div>
@@ -527,7 +527,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Staci</h4>
+                <h4>Staci Wilson</h4>
               </div>
             </div>
           </div>
@@ -550,50 +550,6 @@
 
       </div>
     </section><!-- End Team Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <h3>Contact <span>Us</span></h3>
-          <p>This is a Machine Learning project while we studied in Case Western Reserve University Data Analysis BootCamp.</p>
-        </div>
-
-        <div class="row mt-5">
-
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>10900 Euclid Ave, Cleveland, OH 44106</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Website:</h4>
-                <a href="https://bootcamp.case.edu/data/"><p>https://bootcamp.case.edu/data/</p></a>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1(216)333-1821</p>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="col-lg-8">
-        </div>
-  
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
 
@@ -643,7 +599,7 @@
   <script type="text/javascript">var gameData ='{{bggData[1]|tojson}}';</script>
   <script type="text/javascript">var rankingData ='{{bggData[2]|tojson}}';</script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
-
-</body>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/config.js') }}"></script>
+  <script type="text/javascript" src="../static/js/config.js"></script></body>
 
 </html>
