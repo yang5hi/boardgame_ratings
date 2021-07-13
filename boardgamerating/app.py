@@ -75,8 +75,6 @@ def prediction():
     RF_pred = round(y_pred[0], 2)
     print(f'RF prediction= {RF_pred}')
 
-    predict_list.append(RF_pred)
-
     return render_template("index.html", RF_pred=RF_pred)
 
 
