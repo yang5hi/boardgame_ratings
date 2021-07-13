@@ -52,8 +52,9 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#EDA">EDA</a></li>
-          <li><a class="nav-link scrollto" href="#predictions">Model Predictions</a></li>
+          <li><a class="nav-link scrollto" href="#fitting">Model Fitting</a></li>
           <li><a class="nav-link scrollto " href="#comparison">Model Comparison</a></li>
+          <li><a class="nav-link scrollto " href="#prediction">Model Prediction</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -132,12 +133,12 @@
       </div>
     </section><!-- End Cta Section -->
 
-    <!-- ======= Model Predictions | Services Section ======= -->
-    <section id="predictions" class="services">
+    <!-- ======= Model Fitting | Services Section ======= -->
+    <section id="fitting" class="services">
       <div class="container">
 
         <div class="section-title">
-          <h2>Model Predictions</h2>
+          <h2>Model Fitting</h2>
           <h3>scikit learn <span>Regressor</span></h3>
           <p>The target values are continuous, thus several regressional models were adapted for model fitting and predicting.</p>
         </div>
@@ -218,7 +219,7 @@
         </div>
 
       </div>
-    </section><!-- End Model Predictions | Services Section -->
+    </section><!-- End Model Fitting | Services Section -->
 
     <!-- ======= Model Comparison I | Portfolio Section ======= -->
     <section id="comparison" class="portfolio">
@@ -234,9 +235,9 @@
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-app">Corr Heatmap</li>
+              <li data-filter=".filter-web">Feature Importance</li>
+              <li data-filter=".filter-card">Machine Learning Models</li>
             </ul>
           </div>
         </div>
@@ -244,88 +245,45 @@
         <div class="row portfolio-container">
 
           <div class="col-md-6 portfolio-item filter-app">
-            <img src="../knr.svg" class="img-fluid" alt="">
+            <img src="../heat.svg" class="img-fluid" alt="corr heat map">
             <div class="portfolio-info">
-              <h4>KNeighborRegressor</h4>
+              <h4>Heatmap of Correlations</h4>
               <p>App</p>
             </div>
           </div>
-
           <div class="col-md-6 portfolio-item filter-web">
-            <img src="../rf.svg" class="img-fluid" alt="">
+            <img src="../heat.svg" class="img-fluid" alt="corr heat map">
+            <div class="portfolio-info">
+              <h4>Feature Importance</h4>
+              <p>RandomForestRegressor</p>
+            </div>
+          </div>
+          <div class="col-md-6 portfolio-item filter-card">
+            <img src="../rf.png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>RandomForestRegressor</h4>
               <p>Web</p>
             </div>
           </div>
-
-          <div class="col-md-6 portfolio-item filter-app">
-            <img src="../heat.svg" class="img-fluid" alt="">
+          <div class="col-md-6 portfolio-item filter-card">
+            <img src="../svm.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Heatmap of Correlations</h4>
+              <h4>svm</h4>
               <p>App</p>
-              <a href="../static/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
           <div class="col-md-6 portfolio-item filter-card">
-            <img src="../static/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <img src="../knr.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="../static/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-md-6 portfolio-item filter-web">
-            <img src="../static/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="../static/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-md-6 portfolio-item filter-app">
-            <img src="../static/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
+              <h4>KNeighborRegressor</h4>
               <p>App</p>
-              <a href="../static/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
-
           <div class="col-md-6 portfolio-item filter-card">
-            <img src="../static/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+            <img src="../mlp.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="../static/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-md-6 portfolio-item filter-card">
-            <img src="../static/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="../static/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-md-6 portfolio-item filter-web">
-            <img src="../static/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="../static/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <h4>mlp</h4>
+              <p>App</p>
             </div>
           </div>
 
@@ -403,6 +361,47 @@
       </div>
     </section><!-- End Model Comparison II | Pricing Section -->
 
+    <!-- ======= Model Prediction | Contact Section ======= -->
+    <section id="prediction" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Model Predictions</h2>
+          <h3>Choose<span> Parameters</span></h3>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Model Preidction | Contact Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
