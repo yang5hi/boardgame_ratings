@@ -245,45 +245,53 @@
         <div class="row portfolio-container">
 
           <div class="col-md-6 portfolio-item filter-app">
-            <img src="../heat.svg" class="img-fluid" alt="corr heat map">
+            <img src="../static/img/heat.png" class="img-fluid" alt="corr heat map">
             <div class="portfolio-info">
               <h4>Heatmap of Correlations</h4>
-              <p>App</p>
+              <p>sklearn SimpleImputer --> correlation matrix</p>
             </div>
           </div>
           <div class="col-md-6 portfolio-item filter-web">
-            <img src="../heat.svg" class="img-fluid" alt="corr heat map">
+            <img src="../static/img/features.png" class="img-fluid" alt="features">
             <div class="portfolio-info">
               <h4>Feature Importance</h4>
               <p>RandomForestRegressor</p>
             </div>
           </div>
           <div class="col-md-6 portfolio-item filter-card">
-            <img src="../rf.png" class="img-fluid" alt="">
+            <img src="../static/img/rf.png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>RandomForestRegressor</h4>
-              <p>Web</p>
             </div>
           </div>
           <div class="col-md-6 portfolio-item filter-card">
-            <img src="../svm.png" class="img-fluid" alt="">
+            <img src="../static/img/svm.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>svm</h4>
-              <p>App</p>
+              <h4>svm Epsilon Support Vector Regression</h4>
             </div>
           </div>
           <div class="col-md-6 portfolio-item filter-card">
-            <img src="../knr.png" class="img-fluid" alt="">
+            <img src="../static/img/knr.png" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>KNeighborRegressor</h4>
-              <p>App</p>
             </div>
           </div>
           <div class="col-md-6 portfolio-item filter-card">
-            <img src="../mlp.png" class="img-fluid" alt="">
+            <img src="../static/img/mlp.png" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>mlp</h4>
-              <p>App</p>
+              <h4>neural network MLPRegressor</h4>
+            </div>
+          </div>
+          <div class="col-md-6 portfolio-item filter-card">
+            <img src="../static/img/abr.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>AdaBoostRegressor</h4>
+            </div>
+          </div>
+          <div class="col-md-6 portfolio-item filter-card">
+            <img src="../static/img/rnr.png" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>RadiusNeighborsRegressor</h4>
             </div>
           </div>
 
@@ -299,29 +307,12 @@
         <div class="section-title">
           <h2>Model Comparison Results</h2>
           <h3>Our Machine Learning <span>Models</span></h3>
-          <p>Here we selected three ML models with their accuracy</p>
+          <p>Here we selected four ML models to compare</p>
         </div>
 
         <div class="row">
 
-          <div class="col-lg-4 col-md-6">
-            <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
             <div class="box recommended">
               <span class="recommended-badge">Recommended</span>
               <h3>Business</h3>
@@ -334,12 +325,46 @@
                 <li class="na">Massa ultricies mi</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#prediction" class="btn-buy">Predict Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#prediction" class="btn-buy">Predict Now</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+          <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <h3>Free</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#prediction" class="btn-buy">Predict Now</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
             <div class="box">
               <h3>Developer</h3>
               <h4><sup>$</sup>29<span> / month</span></h4>
@@ -351,7 +376,7 @@
                 <li>Massa ultricies mi</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#prediction" class="btn-buy">Predict Now</a>
               </div>
             </div>
           </div>
