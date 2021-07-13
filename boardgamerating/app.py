@@ -1,44 +1,84 @@
-from flask import Flask, render_template, redirect, jsonify
-from sqlalchemy import create_engine
+# Dependencies
+from types import new_class
+import numpy as np
 import pandas as pd
-import bgg_sql
+from flask import Flask, render_template, request
 
-# Create an instance of Flask
-app = Flask(__name__)
+# =========================================================================================================
+# read in csv file
+game_info_df=pd.read_csv("../data/boardgames_07022021.csv")
+# remove duplicate games
+game_info_df.drop_duplicates(subset=['objectid'], inplace=True)
+# choose the features based on correlations
+game_info_df=game_info_df[['average', 'numwanting', 'siteviews', 'blogs', 'minage', 'news',
+                           'podcast', 'totalvotes', 'numcomments', 'numgeeklists', 'weblink']].copy()
+# remove the rows which have invalid values
+game_info_df.drop(game_info_df[game_info_df['average'] ==0].index, inplace = True)
+game_info_df.drop(game_info_df[game_info_df['totalvotes'] ==0].index, inplace = True)
+# drop the null rows
+game_info_df.dropna(inplace=True)
+# =========================================================================================================
+# Set features (X) and target (y)
+y=game_info_df['average']
+X=game_info_df.drop(['average'],axis=1)
+# Scale the data
+from sklearn.preprocessing import MinMaxScaler
+X_scaler = MinMaxScaler().fit(X)
+X_scaled = X_scaler.transform(X)
+# =========================================================================================================
+from sklearn.ensemble import RandomForestRegressor
+ # Create a random forest regressor,  n_estimators=1000, criterion="mse", max_depth="None"
+rf = RandomForestRegressor(n_estimators=1000)
+rf = rf.fit(X_scaled, y)
 
-# Create database connection
-# change the owner name, password and port number based on your local situation
-# engine = create_engine(f'postgresql://{*database_owner}:{*password}@localhost:{*port}/housing_db')
-rds_connection_string = "postgres:Di2JieDu@n@localhost:5432/boardgame_db"
-engine = create_engine(f'postgresql://{rds_connection_string}')
+# =========================================================================================================
+
+app = Flask(__name__, static_url_path='/static')
+
+RF_pred=0
 
 @app.route("/")
-def index():
-    news_df=pd.read_sql_query('select * from news', con=engine)
-    game_info_df=pd.read_sql_query('select * from game_info', con=engine)
-    ranking_200_df=pd.read_sql_query('select * from ranking_200', con=engine)
-    news_dict=news_df.to_dict()
-    game_info_dict=game_info_df.T.to_dict()
-    ranking_200_df.set_index('BoardGameRank', inplace=True)
-    ranking_dict=ranking_200_df.to_dict()
-    bggData=[news_dict,game_info_dict,ranking_dict]
-    # Return template and data
-    return render_template("index.html", bggData=bggData)
+def home():
+    print(f"home")
+    return render_template("index.html", RF_pred=RF_pred)
 
-@app.route("/scrape")
-def scraper():
-    # Run the scrape function
-    boardgame_data = bgg_sql.scrape()
-    ranking_200_df=boardgame_data[0]
-    game_info_selected_df=boardgame_data[1]
-    news_df=boardgame_data[2]
-    # Load dataframes into databases
-    
-    ranking_200_df.to_sql(name = 'ranking_200', con = engine, if_exists = 'replace', index = True)
-    game_info_selected_df.to_sql(name = 'game_info', con = engine, if_exists = 'replace', index = True)
-    news_df.to_sql(name = 'news', con = engine, if_exists = 'replace', index = False)
-    # Redirect back to home page
-    return redirect("/") #performing URL redirection
+@app.route("/prediction", methods=['POST'])
+def prediction():
+    # print(f"prediction")
+
+    numwanting = request.form['numwanting']
+    siteviews = request.form['siteviews']
+    blogs = request.form['blogs']
+    minage = request.form['minage']
+    news = request.form['news']
+    podcast = request.podcast['podcast']
+    totalvotes = request.form['totalvotes']
+    numcomments = request.form['numcomments']
+    numgeeklists = request.form['numgeeklists']
+    weblink = request.form['weblink']
+
+    # predict_list.append(minplayers)
+    # predict_list.append(maxplayers)
+    # predict_list.append(minplaytime)
+    # predict_list.append(maxplaytime)
+    # predict_list.append(minage)
+
+    # print(f"=======================")
+    # print(f"{predict_list}")
+    # print(f"=======================")
+
+    X_pred = np.array([[numwanting,siteviews, blogs, minage, news,
+                podcast, totalvotes, numcomments, numgeeklists, weblink]])
+
+    y_pred = rf.predict(X_pred)
+
+    RF_pred = round(y_pred[0], 2)
+    print(f'RF prediction= {RF_pred}')
+
+    predict_list.append(RF_pred)
+
+    return render_template("index.html", RF_pred=RF_pred)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

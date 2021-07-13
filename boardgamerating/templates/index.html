@@ -127,7 +127,7 @@
         <div class="text-center">
           <h3>Machine Learning</h3>
           <p>With the game data visualized, we choose to dive deep into predictions of ratings based on numerical values related to the game.</p>
-          <a class="cta-btn" href="#">Explore More on Ratings Prediction</a>
+          <a class="cta-btn" href="#prediction">Explore More on Ratings Prediction</a>
         </div>
 
       </div>
@@ -314,42 +314,55 @@
     <section id="prediction" class="contact">
       <div class="container">
 
-        <div class="section-title">
-          <h2>Model Predictions</h2>
-          <h3>Choose<span> Parameters</span></h3>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-        </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
+          <div class="section-title">
+            <h2>Model Predictions</h2>
+            <h3>RandomForestRegressor<span> Predictor</span></h3>
+            <p>Enter the values for 10 Independent variables, then hit the button.</p>
           </div>
-
-        </div>
-
+          <form action="{{ url_for('prediction') }}" method="post" role='form' class='php-email-form'>
+              <div class="row">
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="numwanting" placeholder="number of people wanting the game, 0-2,085" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="siteviews" placeholder=" number of views on the site, 1431-10million" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="blogs" placeholder="number of blogs regarding game, 0-1473" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="minage" placeholder="minimum age requiremnet per the publishers, 0-25" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="news" placeholder="number news articles on game, 0-37" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="podcast" placeholder="number of podcasts on the game, 0-588" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="totalvotes" placeholder="total number of community vote, 0-2,108" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="numcomments" placeholder="number of comments on the site on this game, 0-18,840" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="numgeeklists" placeholder="number of geeks with game on list, 0-136,869" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3">
+                    <input type="text" class="form-control" name="weblink" placeholder="number of weblinks for the game, 0-207" required>
+                  </div>
+              </div>
+              <br>
+              <div class="text-center col-12"><button type="submit">Calculate Rating</button></div>
+          </form>
+          <br>
+          <div class="text-center">
+              <h3 ><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html">Randomforest</a> PREDICTION</h3>
+              <br>
+              <p><b>Ranking:</b>{{ RF_pred }}</p>
+          </div>
       </div>
+
     </section><!-- End Model Preidction | Contact Section -->
 
     <!-- ======= Team Section ======= -->
