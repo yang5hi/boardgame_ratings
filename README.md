@@ -4,15 +4,15 @@ We explored the BoardGameGeek dataset. Using machine learning, we predict board 
 
 ## Exploratory data analysis (EDA)
 
-![EDA](image\EDA.png)
+![EDA](image/EDA.png)
 
 
 
 ## Feature Selection
 
-![heat](machine learning models\heat.png)
+![heat](machine learning models/heat.png)
 
-![feature](machine learning models\feature.png)
+![feature](machine learning models/feature.png)
 
 
 
