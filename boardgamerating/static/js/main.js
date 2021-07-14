@@ -1,3 +1,4 @@
+window.location.hash="jump_here";
 /**
 * Template Name: Tempo - v4.3.0
 * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/

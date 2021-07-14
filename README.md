@@ -1,5 +1,7 @@
 # ML on board game ratings
 
+![home](image/home.png)
+
 We explored the BoardGameGeek dataset. Using machine learning, we predict board game ratings based on 10 independent variables. 
 
 ## Exploratory data analysis (EDA)

@@ -27,8 +27,8 @@ X_scaler = MinMaxScaler().fit(X)
 X_scaled = X_scaler.transform(X)
 # =========================================================================================================
 from sklearn.ensemble import RandomForestRegressor
- # Create a random forest regressor,  n_estimators=1000, criterion="mse", max_depth="None"
-rf = RandomForestRegressor(n_estimators=1000)
+ # Create a random forest regressor,  n_estimators=100, criterion="mse", max_depth="None"
+rf = RandomForestRegressor()
 rf.fit(X_scaled, y)
 # =========================================================================================================
 
