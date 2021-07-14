@@ -29,43 +29,34 @@ X_scaled = X_scaler.transform(X)
 from sklearn.ensemble import RandomForestRegressor
  # Create a random forest regressor,  n_estimators=1000, criterion="mse", max_depth="None"
 rf = RandomForestRegressor(n_estimators=1000)
-rf = rf.fit(X_scaled, y)
+rf.fit(X_scaled, y)
 
 # =========================================================================================================
 
 app = Flask(__name__, static_url_path='/static')
 
 RF_pred=0
+X_pred=[]
 
 @app.route("/")
 def home():
     print(f"home")
-    return render_template("index.html", RF_pred=RF_pred)
+    return render_template("index.html", RF_pred=RF_pred,X_pred=X_pred)
 
 @app.route("/prediction", methods=['POST'])
 def prediction():
-    # print(f"prediction")
+    print(f"prediction")
 
     numwanting = request.form['numwanting']
     siteviews = request.form['siteviews']
     blogs = request.form['blogs']
     minage = request.form['minage']
     news = request.form['news']
-    podcast = request.podcast['podcast']
+    podcast = request.form['podcast']
     totalvotes = request.form['totalvotes']
     numcomments = request.form['numcomments']
     numgeeklists = request.form['numgeeklists']
     weblink = request.form['weblink']
-
-    # predict_list.append(minplayers)
-    # predict_list.append(maxplayers)
-    # predict_list.append(minplaytime)
-    # predict_list.append(maxplaytime)
-    # predict_list.append(minage)
-
-    # print(f"=======================")
-    # print(f"{predict_list}")
-    # print(f"=======================")
 
     X_pred = np.array([[numwanting,siteviews, blogs, minage, news,
                 podcast, totalvotes, numcomments, numgeeklists, weblink]])
@@ -74,8 +65,9 @@ def prediction():
 
     RF_pred = round(y_pred[0], 2)
     print(f'RF prediction= {RF_pred}')
+    print(X_pred[0])
 
-    return render_template("index.html", RF_pred=RF_pred)
+    return render_template("index.html", RF_pred=RF_pred, X_pred=X_pred[0])
 
 
 if __name__ == "__main__":
