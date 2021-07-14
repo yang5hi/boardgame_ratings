@@ -42,7 +42,7 @@ def home():
     print(f"home")
     return render_template("index.html", RF_pred=RF_pred[0],X_pred=X_pred)
 
-@app.route("/prediction", methods=['POST','GET'])
+@app.route("/prediction%23prediction", methods=['POST','GET'])
 def prediction():
     print(f"prediction")
     
@@ -66,7 +66,7 @@ def prediction():
     print(f'RF prediction= {RF_pred[0]}')
     print(X_pred[0])
 
-    return render_template("prediction.html", RF_pred=RF_pred[0], X_pred=X_pred[0])
+    return render_template("index.html", RF_pred=RF_pred[0], X_pred=X_pred[0])
 
 
 if __name__ == "__main__":
