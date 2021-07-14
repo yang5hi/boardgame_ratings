@@ -40,6 +40,7 @@ The csv file contains 29,000+ board games, each has 50+ attributions. We cleaned
 | -------------------- | ------------------------------------------------------------ |
 | ‘explained_variance’ | [`metrics.explained_variance_score`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html#sklearn.metrics.explained_variance_score) |
 | ‘r2’                 | [`metrics.r2_score`](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score) |
+<<<<<<< HEAD
 
 ## ML Prediction
 
@@ -52,3 +53,4 @@ The model predictions take 10 values from the form and gives results on the righ
 ## Future Work
 
 Improve model accuracy by test train split and selection of features.
+
