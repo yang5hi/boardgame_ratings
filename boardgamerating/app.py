@@ -30,23 +30,22 @@ from sklearn.ensemble import RandomForestRegressor
  # Create a random forest regressor,  n_estimators=1000, criterion="mse", max_depth="None"
 rf = RandomForestRegressor(n_estimators=1000)
 rf.fit(X_scaled, y)
-
 # =========================================================================================================
 
 app = Flask(__name__, static_url_path='/static')
 
-RF_pred=0
+RF_pred="  "
 X_pred=[]
 
 @app.route("/")
 def home():
     print(f"home")
-    return render_template("index.html", RF_pred=RF_pred,X_pred=X_pred)
+    return render_template("index.html", RF_pred=RF_pred[0],X_pred=X_pred)
 
-@app.route("/prediction", methods=['POST'])
+@app.route("/prediction", methods=['POST','GET'])
 def prediction():
     print(f"prediction")
-
+    
     numwanting = request.form['numwanting']
     siteviews = request.form['siteviews']
     blogs = request.form['blogs']
@@ -63,11 +62,11 @@ def prediction():
 
     y_pred = rf.predict(X_pred)
 
-    RF_pred = round(y_pred[0], 2)
-    print(f'RF prediction= {RF_pred}')
+    RF_pred = [round(y_pred[0], 2)]
+    print(f'RF prediction= {RF_pred[0]}')
     print(X_pred[0])
 
-    return render_template("index.html", RF_pred=RF_pred, X_pred=X_pred[0])
+    return render_template("prediction.html", RF_pred=RF_pred[0], X_pred=X_pred[0])
 
 
 if __name__ == "__main__":
