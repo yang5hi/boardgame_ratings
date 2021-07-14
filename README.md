@@ -10,9 +10,9 @@ We explored the BoardGameGeek dataset. Using machine learning, we predict board 
 
 ## Feature Selection
 
-![heat](machine learning models/heat.png)
+![heat](ml_models/heat.png)
 
-![feature](machine learning models/feature.png)
+![feature](ml_models/feature.png)
 
 
 
