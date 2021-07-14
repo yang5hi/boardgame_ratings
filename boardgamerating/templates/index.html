@@ -355,6 +355,8 @@
                         </div>
                         <br>
                         <div class="text-center col-12"><button type="submit" href="#result"> Predict Rating</button></div>
+                        <a name="jump_here"></a>
+
                   </form> 
                 </div>
                 <div class="col-lg-1"></div>
@@ -501,4 +503,5 @@
 
   <!-- Our JavaScript -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script> window.location.hash="jump_here"; </script>
 </html>
