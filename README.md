@@ -1,21 +1,34 @@
-# boardgame_ratings
+# ML on board game ratings
 
-we will to explore the BoardGameGeek dataset. Using machine learning, we intend to predict what rating a board game should have on the BGG website (on a scale of 1-10) based on factors such as type, name, playtime, categories, total_comments, total_wants, etc. To achieve this we will also be using Pandas, sklearn, and HTML/CSS/Bootstrap.
+We explored the BoardGameGeek dataset. Using machine learning, we predict board game ratings based on 10 independent variables. 
+
+## Exploratory data analysis (EDA)
+
+![EDA](image\EDA.png)
 
 
 
-Exploratory data analysis (EDA)
+## Feature Selection
+
+![heat](machine learning models\heat.png)
+
+![feature](machine learning models\feature.png)
 
 
 
-- svm
+
+
+
+
+- [sklearn.svm.SVC](https://scikit-learn.org/stable/modules/svm.html#regression)
 - [sklearn.ensemble.AdaBoostRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostRegressor.html?highlight=regressor#sklearn.ensemble.AdaBoostRegressor) 
-- [sklearn.ensemble.RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html?highlight=regressor#sklearn.ensemble.RandomForestRegressor) **0.65**
-- [sklearn.neighbors.KNeighborsRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html?highlight=regressor#sklearn.neighbors.KNeighborsRegressor) **less than 0.5 data score**
+- [sklearn.ensemble.RandomForestRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html?highlight=regressor#sklearn.ensemble.RandomForestRegressor) 
+- [sklearn.neighbors.KNeighborsRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsRegressor.html?highlight=regressor#sklearn.neighbors.KNeighborsRegressor) 
 - [sklearn.neighbors.RadiusNeighborsRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.RadiusNeighborsRegressor.html?highlight=regressor#sklearn.neighbors.RadiusNeighborsRegressor)
 - [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html?highlight=regressor#sklearn.neural_network.MLPRegressor) 
-- [sklearn.tree.DecisionTreeRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html?highlight=regressor#sklearn.tree.DecisionTreeRegressor) **<0.5**
-- 
+- [sklearn.tree.DecisionTreeRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html?highlight=regressor#sklearn.tree.DecisionTreeRegressor) 
+
+  
 
 | **Regression**       | metrics link                                                 |
 | -------------------- | ------------------------------------------------------------ |
