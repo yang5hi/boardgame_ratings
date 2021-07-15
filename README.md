@@ -1,10 +1,16 @@
-# ML on board game ratings
+# Machine Learning on board game ratings
 
 ![home](image/home.png)
 
 We explored the BoardGameGeek dataset. Using machine learning, we predict board game ratings based on 10 independent variables. 
 
 ## Exploratory data analysis (EDA)
+
+For our exploratory data analysis, we chose to highlight attributes in the categories of player, time, and activity.
+
+* Player: Minimum/Maximum number of players does not appear to have a significant effect on a game’s rating. However, the average rating of games does increase as the recommended minimum age increases. 
+* Time: Looking at minimum/maximum play time, the average rating of games increases until an average rating of 9 — and then the very highest rated games (10) have a playtime around 32 minutes. 
+* Activity: Across the board, the most popular games (plays, wants, and total votes) have an average rating of 7.
 
 ![EDA](image/EDA.png)
 
