@@ -22,7 +22,7 @@ Features were selected based on correlations of independent variables.
 
 The top 10 features are number of people wanting the game, number of views on the site, number of blogs regarding game, minimum age requirement per the publishers, number news articles on game, number of podcasts on the game, total number of community vote, number of comments on the site on this game, number of geeks with game on list, number of weblinks for the game. 
 
-The feature importance were plotted in a pie plot using random forest regression.
+The feature importance was plotted in a pie plot using random forest regression.
 
 ![feature](image/feature.png)
 
