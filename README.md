@@ -20,7 +20,7 @@ For our exploratory data analysis, we chose to highlight attributes in the categ
 
 Features were selected based on correlations of independent variables. 
 
-The top 10 features are number of people wanting the game, number of views on the site, number of blogs regarding game, minimum age requirement per the publishers, number news articles on game, number of podcasts on the game, total number of community vote, number of comments on the site on this game, number of geeks with game on list, number of weblinks for the game. 
+The top 10 features are the number of people wanting the game, number of views on the site, number of blogs regarding the game, minimum age requirement per the publishers, number of news articles on the game, number of podcasts on the game, the total number of the community votes, number of comments on the site on this game, number of geeks with the game on the list, number of weblinks for the game.
 
 The feature importance was plotted in a pie plot using random forest regression.
 
